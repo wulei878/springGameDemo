@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  XGCG
+//
+//  Created by Owen on 15/4/26.
+//  Copyright (c) 2015年 Sean. All rights reserved.
+//
+
+#ifndef BiuLiCai_PrefixHeader_pch
+#define BiuLiCai_PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
+#endif
