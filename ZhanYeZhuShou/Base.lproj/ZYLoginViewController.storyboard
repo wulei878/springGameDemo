@@ -63,12 +63,12 @@
                                                             <constraint firstAttribute="height" constant="60" id="5aG-0g-Nwv"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="done"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="cQE-JM-XrM" id="7h2-bi-sOI"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ku-sC-LJa" customClass="ZYCustomTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ku-sC-LJa" customClass="ZYPasswordTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
                                                         <rect key="frame" x="25" y="61" width="270" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="ww5-Cx-g9T"/>
@@ -231,7 +231,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.20000000000000001" green="0.71764705880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="cQE-JM-XrM" id="CcU-td-rbb"/>
                                 </connections>
@@ -290,6 +290,184 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHj-Ym-4e2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="614" y="443"/>
+        </scene>
+        <!--Verification Code View Controller-->
+        <scene sceneID="t6v-x5-Yv6">
+            <objects>
+                <viewController storyboardIdentifier="ZYVerificationCodeViewController" id="GkY-Ks-Lrh" customClass="ZYVerificationCodeViewController" customModule="ZhanYeZhuShou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1nO-Oi-rTB"/>
+                        <viewControllerLayoutGuide type="bottom" id="lce-vK-bqP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DgK-RM-jRp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码已发送到" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hak-8W-itR">
+                                <rect key="frame" x="107" y="31" width="105" height="15"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15650798602" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZR-fn-Scp">
+                                <rect key="frame" x="105" y="57" width="110.5" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ZN-gY-V3x">
+                                <rect key="frame" x="49.5" y="101" width="221" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Hsc-lC-cbD"/>
+                                    <constraint firstAttribute="width" constant="221" id="sCk-Kf-idg"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6y-rd-cGQ">
+                                <rect key="frame" x="118" y="202" width="84" height="24"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                <state key="normal" title="重新发送验证码">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.71764705880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resendAction:" destination="GkY-Ks-Lrh" eventType="touchUpInside" id="iN6-6T-5dD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sZR-fn-Scp" firstAttribute="top" secondItem="hak-8W-itR" secondAttribute="bottom" constant="11" id="7lr-aN-lKt"/>
+                            <constraint firstAttribute="centerX" secondItem="sZR-fn-Scp" secondAttribute="centerX" id="Bxg-oe-Oj6"/>
+                            <constraint firstItem="b6y-rd-cGQ" firstAttribute="top" secondItem="9ZN-gY-V3x" secondAttribute="bottom" constant="65" id="EX8-43-mai"/>
+                            <constraint firstAttribute="centerX" secondItem="hak-8W-itR" secondAttribute="centerX" id="V8l-Kh-r9R"/>
+                            <constraint firstAttribute="centerX" secondItem="9ZN-gY-V3x" secondAttribute="centerX" id="Yfu-Wu-ZUt"/>
+                            <constraint firstItem="9ZN-gY-V3x" firstAttribute="top" secondItem="1nO-Oi-rTB" secondAttribute="bottom" constant="81" id="feh-1b-oBK"/>
+                            <constraint firstAttribute="centerX" secondItem="b6y-rd-cGQ" secondAttribute="centerX" id="gy4-zm-etM"/>
+                            <constraint firstItem="hak-8W-itR" firstAttribute="top" secondItem="1nO-Oi-rTB" secondAttribute="bottom" constant="11" id="tP4-eK-lWE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wq0-ig-GUr">
+                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back" id="S7h-DK-SSv">
+                            <connections>
+                                <action selector="goBack:" destination="GkY-Ks-Lrh" id="M5w-5q-bu7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="phoneNumLabel" destination="sZR-fn-Scp" id="5pZ-0b-CaN"/>
+                        <outlet property="resendCodeButton" destination="b6y-rd-cGQ" id="lwo-Yn-gia"/>
+                        <outlet property="verficationCodeView" destination="9ZN-gY-V3x" id="Vnz-c5-JXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nt-Ea-e6i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="967" y="443"/>
+        </scene>
+        <!--Set Password View Controller-->
+        <scene sceneID="bgl-JD-pNg">
+            <objects>
+                <viewController storyboardIdentifier="ZYSetPasswordViewController" id="7xt-Jb-ES4" customClass="ZYSetPasswordViewController" customModule="ZhanYeZhuShou" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="maX-i7-eml"/>
+                        <viewControllerLayoutGuide type="bottom" id="fgU-ph-pop"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F07-Rg-B4a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waf-68-wac" customClass="ZYPasswordTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
+                                <rect key="frame" x="25" y="81" width="270" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ZHx-SV-slH"/>
+                                </constraints>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7xt-Jb-ES4" id="Ibo-Lf-4Ms"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deQ-34-HPh" userLabel="separator">
+                                <rect key="frame" x="25" y="141" width="270" height="1"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.71764705880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="g3N-9e-Xkb"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SED-UI-lCO" customClass="ZYPasswordTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
+                                <rect key="frame" x="25" y="142" width="270" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ZKi-Ic-73h"/>
+                                </constraints>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7xt-Jb-ES4" id="KbB-af-24L"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jki-GH-qLm" userLabel="separator">
+                                <rect key="frame" x="25" y="202" width="270" height="1"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.71764705880000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="0Gg-na-leO"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QX5-OJ-Mph">
+                                <rect key="frame" x="25" y="250" width="270" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bQC-fE-wjh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneAction:" destination="7xt-Jb-ES4" eventType="touchUpInside" id="MDY-xw-hLU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="deQ-34-HPh" firstAttribute="centerX" secondItem="waf-68-wac" secondAttribute="centerX" id="BUC-eK-1p4"/>
+                            <constraint firstItem="waf-68-wac" firstAttribute="leading" secondItem="F07-Rg-B4a" secondAttribute="leading" constant="25" id="CHV-Uz-vtN"/>
+                            <constraint firstItem="SED-UI-lCO" firstAttribute="centerX" secondItem="waf-68-wac" secondAttribute="centerX" id="D8v-Sh-D8G"/>
+                            <constraint firstItem="deQ-34-HPh" firstAttribute="width" secondItem="waf-68-wac" secondAttribute="width" id="HKn-cN-2T0"/>
+                            <constraint firstAttribute="trailing" secondItem="waf-68-wac" secondAttribute="trailing" constant="25" id="JUB-gz-voT"/>
+                            <constraint firstItem="waf-68-wac" firstAttribute="centerX" secondItem="QX5-OJ-Mph" secondAttribute="centerX" id="MsO-3w-05X"/>
+                            <constraint firstItem="waf-68-wac" firstAttribute="top" secondItem="maX-i7-eml" secondAttribute="bottom" constant="61" id="NfG-0D-mG5"/>
+                            <constraint firstItem="SED-UI-lCO" firstAttribute="width" secondItem="waf-68-wac" secondAttribute="width" id="QSj-PY-X7S"/>
+                            <constraint firstItem="Jki-GH-qLm" firstAttribute="top" secondItem="SED-UI-lCO" secondAttribute="bottom" id="RNA-Zi-l2F"/>
+                            <constraint firstItem="QX5-OJ-Mph" firstAttribute="top" secondItem="Jki-GH-qLm" secondAttribute="bottom" constant="47" id="UuW-xT-uFY"/>
+                            <constraint firstItem="SED-UI-lCO" firstAttribute="top" secondItem="deQ-34-HPh" secondAttribute="bottom" id="Vcn-L6-Ka5"/>
+                            <constraint firstItem="Jki-GH-qLm" firstAttribute="centerX" secondItem="SED-UI-lCO" secondAttribute="centerX" id="bEa-sT-UtT"/>
+                            <constraint firstAttribute="centerX" secondItem="waf-68-wac" secondAttribute="centerX" id="ioe-sG-V5n"/>
+                            <constraint firstItem="deQ-34-HPh" firstAttribute="top" secondItem="waf-68-wac" secondAttribute="bottom" id="nFg-6X-Yab"/>
+                            <constraint firstItem="waf-68-wac" firstAttribute="width" secondItem="QX5-OJ-Mph" secondAttribute="width" id="qGe-bl-11b"/>
+                            <constraint firstItem="Jki-GH-qLm" firstAttribute="width" secondItem="SED-UI-lCO" secondAttribute="width" id="rFO-SZ-iq8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HxA-L3-KEY">
+                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back" id="JM4-dI-xtU">
+                            <connections>
+                                <action selector="goBack:" destination="7xt-Jb-ES4" id="HdE-Dn-LhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="confirmTextField" destination="SED-UI-lCO" id="NKf-Uj-R31"/>
+                        <outlet property="doneButton" destination="QX5-OJ-Mph" id="EgO-gK-DcA"/>
+                        <outlet property="passwordTextField" destination="waf-68-wac" id="2mv-5z-oIY"/>
+                        <outletCollection property="separatorHeightArray" destination="g3N-9e-Xkb" collectionClass="NSMutableArray" id="x53-3o-ySV"/>
+                        <outletCollection property="separatorHeightArray" destination="0Gg-na-leO" collectionClass="NSMutableArray" id="oiM-EZ-bHb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l3k-wT-SEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1315" y="443"/>
         </scene>
     </scenes>
     <resources>

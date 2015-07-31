@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FSCalendar (0.9.2)
   - HPGrowingTextView (1.0.1)
   - MBProgressHUD (0.9.1)
   - MD5Digest (0.1.0)
@@ -33,6 +34,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5.2)
+  - FSCalendar
   - HPGrowingTextView (~> 1.0.1)
   - MBProgressHUD (~> 0.9)
   - MD5Digest (~> 0.1.0)
@@ -44,6 +46,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FSCalendar: 6f8ad93d2999a225cd1e2e1024bfaeeea8ca6c4d
   HPGrowingTextView: 7c7488ee3f9a618bf8b56f49cbbbca06eb70aaaf
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MD5Digest: 99bcccfc389c5b7a0edaf66beb80fbc7596a3b65

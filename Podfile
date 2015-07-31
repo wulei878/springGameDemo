@@ -13,5 +13,6 @@ target "ZhanYeZhuShou" do
     pod 'SVPullToRefresh', '~> 0.4.1'
     pod 'HPGrowingTextView', '~> 1.0.1'
     pod 'TTTAttributedLabel', '~> 1.13.3'
+    pod 'FSCalendar'
     pod 'UMengAnalytics'
 end

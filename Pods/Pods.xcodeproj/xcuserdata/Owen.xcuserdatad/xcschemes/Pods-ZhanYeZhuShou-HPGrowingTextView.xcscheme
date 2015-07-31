@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7FA369D53D844A3D7422699"
+               BlueprintIdentifier = "B2A41D70C31B460AD68B3242"
                BuildableName = "libPods-ZhanYeZhuShou-HPGrowingTextView.a"
                BlueprintName = "Pods-ZhanYeZhuShou-HPGrowingTextView"
                ReferencedContainer = "container:Pods.xcodeproj">

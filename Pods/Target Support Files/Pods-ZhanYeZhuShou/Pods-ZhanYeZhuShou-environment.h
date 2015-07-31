@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
+// FSCalendar
+#define COCOAPODS_POD_AVAILABLE_FSCalendar
+#define COCOAPODS_VERSION_MAJOR_FSCalendar 0
+#define COCOAPODS_VERSION_MINOR_FSCalendar 9
+#define COCOAPODS_VERSION_PATCH_FSCalendar 2
+
 // HPGrowingTextView
 #define COCOAPODS_POD_AVAILABLE_HPGrowingTextView
 #define COCOAPODS_VERSION_MAJOR_HPGrowingTextView 1

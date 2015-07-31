@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ZYInputtingPhoneNumViewController: UIViewController {
+let phoneNumberCount = 11
+class ZYInputtingPhoneNumViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var phoneNumTextFiled: ZYCustomTextField!
     @IBOutlet weak var separatorHeight: NSLayoutConstraint!
@@ -23,25 +24,42 @@ class ZYInputtingPhoneNumViewController: UIViewController {
     }
     
     @IBAction func goNext(sender: AnyObject) {
+        navigationController?.pushViewController(ZYVerificationCodeViewController.getInstance(), animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         separatorHeight.constant /= UIScreen.mainScreen().scale
+        nextButton.enabled = false
+        nextButton.setBackgroundImage(UIImage.imageWithColor(UIColor.hexColor(0xd3d3d3)), forState: .Disabled)
+        nextButton.setBackgroundImage(UIImage.imageWithColor(UIColor.hexColor(0x33b7ff)), forState: .Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldTextDidChange", name: UITextFieldTextDidChangeNotification, object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        UIApplication.sharedApplication().statusBarHidden = true
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func textFieldTextDidChange() {
+        var text = phoneNumTextFiled.text
+        if count(text) >= phoneNumberCount {
+            phoneNumTextFiled.text = text.substringToIndex(advance(text.startIndex, phoneNumberCount))
+            nextButton.enabled = true
+        } else if count(text) < phoneNumberCount {
+            nextButton.enabled = false
+        }
+    }
 
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }

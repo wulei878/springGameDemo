@@ -41,9 +41,21 @@ class ZYCustomTextField: UITextField {
     override func editingRectForBounds(bounds: CGRect) -> CGRect {
         return CGRectMake(15, bounds.origin.y, bounds.size.width, bounds.size.height)
     }
+}
+
+class ZYPasswordTextField:ZYCustomTextField {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        var attributeString = NSAttributedString(string: "请输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x747083),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
+        attributedPlaceholder = attributeString
+        var imageView = UIImageView(image: UIImage(named: "show_password"))
+        imageView.frame.size = CGSizeMake(44, 44)
+        rightView = imageView
+        rightViewMode = UITextFieldViewMode.Always
+        rightView?.userInteractionEnabled = true
+    }
     
     override func rightViewRectForBounds(bounds: CGRect) -> CGRect {
         return CGRectMake(bounds.width - 44, (bounds.height - 44) / 2, 44, 44)
     }
-
 }

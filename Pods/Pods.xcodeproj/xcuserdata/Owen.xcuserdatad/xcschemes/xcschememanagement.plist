@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-ZhanYeZhuShou-FSCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ZhanYeZhuShou-HPGrowingTextView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2AB439515FDE41439B113E0E</key>
+		<key>1269F2F677025118258F60B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3FEEA1FAC00B2D001D875C11</key>
+		<key>2BC7362C5AD4461FCE547271</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>48D247D897E8F906E4B0CB12</key>
+		<key>54D6F490A4D95B69FB6BC000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>55B91355F86FCE709EEE2F95</key>
+		<key>609186DC91E1105CB862B1FF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8EF3352974903993EA3B19A3</key>
+		<key>6212213AFC91CA9363F3BF4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC98EA862C7E70D0569F75CD</key>
+		<key>9490185743F78EF297276EC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1B11EF0D9DEF43E9890049D</key>
+		<key>B2A41D70C31B460AD68B3242</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D716206EA43E9290BB02B838</key>
+		<key>B9B5D10E9BD1BCF2C16CEB6D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E7FA369D53D844A3D7422699</key>
+		<key>E133053024E324D498F69B4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA8F7CB49F140C3D2A3D5F81</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -12,7 +12,7 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
     @IBOutlet weak var phoneNumTextField: ZYCustomTextField!
     @IBOutlet var separatorHeightArray: [NSLayoutConstraint]!
 
-    @IBOutlet weak var passwordTextField: ZYCustomTextField!
+    @IBOutlet weak var passwordTextField: ZYPasswordTextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var forgotPasswordButton: UIButton!
@@ -26,15 +26,8 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
         super.viewDidLoad()
         registerButton.layer.borderWidth = 1 / UIScreen.mainScreen().scale
         registerButton.layer.borderColor = UIColor.hexColor(0x33b7ff).CGColor
-        var attributeString = NSAttributedString(string: "请输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x747083),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
-        passwordTextField.attributedPlaceholder = attributeString
-        var imageView = UIImageView(image: UIImage(named: "show_password"))
-        imageView.frame.size = CGSizeMake(44, 44)
-        passwordTextField.rightView = imageView
-        passwordTextField.rightViewMode = UITextFieldViewMode.Always
-        imageView.userInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: "showPassword")
-        imageView.addGestureRecognizer(tap)
+        passwordTextField.rightView!.addGestureRecognizer(tap)
         for heightConstraint in separatorHeightArray {
             heightConstraint.constant /= UIScreen.mainScreen().scale
         }
