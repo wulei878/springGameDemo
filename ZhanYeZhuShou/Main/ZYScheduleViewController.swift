@@ -52,7 +52,9 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: false)
-        (navigationController?.parentViewController as! ZYMainViewController).hideTabBar()
+        if navigationController != nil {
+            (navigationController?.parentViewController as! ZYMainViewController).hideTabBar()
+        }
     }
     
     func customUI() {

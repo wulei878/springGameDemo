@@ -24,6 +24,9 @@
                             <state key="normal" backgroundImage="icon_title_close">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="nBG-GZ-ZmY"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBp-Ll-SWk">
                             <rect key="frame" x="0.0" y="164" width="600" height="225"/>
@@ -207,6 +210,9 @@
                 <constraint firstItem="nlT-fe-gwJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="v41-FL-Ga2"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textView" destination="nlT-fe-gwJ" id="Bev-0D-90g"/>
+            </connections>
             <point key="canvasLocation" x="376" y="300"/>
         </view>
     </objects>

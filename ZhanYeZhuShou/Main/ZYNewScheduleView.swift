@@ -10,11 +10,17 @@ import UIKit
 
 class ZYNewScheduleView: UIView {
     
+    @IBOutlet weak var textView: UITextView!
+    
+    
     class func getInstance() -> ZYNewScheduleView {
         return UINib(nibName: "ZYNewScheduleView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! ZYNewScheduleView
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    @IBAction func closeAction(sender: AnyObject) {
+        hidden = true
     }
 }

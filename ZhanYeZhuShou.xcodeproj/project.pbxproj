@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */; };
+		5A8D205C1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */; };
 		5A9C25B81B671B9400779546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C25B71B671B9400779546 /* AppDelegate.swift */; };
 		5A9C25BD1B671B9400779546 /* ZYLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A9C25BB1B671B9400779546 /* ZYLoginViewController.storyboard */; };
 		5A9C25BF1B671B9400779546 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A9C25BE1B671B9400779546 /* Images.xcassets */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		5A7FB2501B67D7D00085184C /* Biu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biu-Bridging-Header.h"; sourceTree = "<group>"; };
+		5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYAddressBookCell.swift; sourceTree = "<group>"; };
+		5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYChooseWayToAddViewController.swift; sourceTree = "<group>"; };
 		5A9C25B21B671B9400779546 /* ZhanYeZhuShou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZhanYeZhuShou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9C25B61B671B9400779546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A9C25B71B671B9400779546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -189,7 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				5AA7DBB81B6BD757006DB05F /* Main.storyboard */,
+				5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */,
 				5AA7DBB91B6BD757006DB05F /* ZYAddressBookViewController.swift */,
+				5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */,
 				5AA7DBBA1B6BD757006DB05F /* ZYCalendarCell.swift */,
 				5AA7DBBB1B6BD757006DB05F /* ZYElementViews.xib */,
 				5AA7DBBC1B6BD757006DB05F /* ZYMainViewController.swift */,
@@ -349,9 +355,11 @@
 				5ACBE8461B6935A200886C49 /* ZYSetPasswordViewController.swift in Sources */,
 				5A9C25F71B67C7A400779546 /* XGSingletonObject.m in Sources */,
 				5A9C25B81B671B9400779546 /* AppDelegate.swift in Sources */,
+				5A8D205C1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift in Sources */,
 				5AA7DBC11B6BD757006DB05F /* ZYAddressBookViewController.swift in Sources */,
 				5AA7DBC21B6BD757006DB05F /* ZYCalendarCell.swift in Sources */,
 				5A9C25F31B67C7A400779546 /* XGCommonExtension.swift in Sources */,
+				5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */,
 				5AA7DBA61B6BC90F006DB05F /* ZYMScheduleItem.swift in Sources */,
 				5AA7DBC91B6BE22A006DB05F /* ZYNewScheduleView.swift in Sources */,
 			);
