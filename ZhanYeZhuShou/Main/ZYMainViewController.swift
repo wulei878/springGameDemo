@@ -25,7 +25,7 @@ class ZYMainViewController: UIViewController {
         return [scheduleButton, addressBookButton, personalButton]
     }
     class func getInstance() -> ZYMainViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! ZYMainViewController
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYMainViewController") as! ZYMainViewController
     }
     override func viewDidLoad() {
         super.viewDidLoad()

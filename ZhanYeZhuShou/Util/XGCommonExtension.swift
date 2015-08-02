@@ -41,6 +41,7 @@ extension UIImageView {
     
     func clipsWithCornerRadius(cornerRadius:CGFloat) {
         self.clipsToBounds = true
+        self.layer.masksToBounds = true
         self.backgroundColor = UIColor.clearColor()
         self.layer.cornerRadius = cornerRadius
         self.layer.borderWidth = 1.0

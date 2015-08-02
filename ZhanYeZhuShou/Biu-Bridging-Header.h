@@ -10,3 +10,4 @@
 #import "XGUtility.h"
 #import "MBProgressHUD+CommonShow.h"
 #import "SVPullToRefresh.h"
+#import <HPGrowingTextView/HPGrowingTextView.h>

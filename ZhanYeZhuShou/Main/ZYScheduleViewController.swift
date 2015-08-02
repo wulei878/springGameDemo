@@ -19,7 +19,6 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     @IBOutlet weak var calendarDayContainer: UIView!
     let cellWidth = screen_width / 7
     var scheduleData = [ZYMScheduleItem]()
-    var newScheduleView:ZYNewScheduleView?
     
     class func getInstance() -> ZYScheduleViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYScheduleViewController") as! ZYScheduleViewController
@@ -42,6 +41,10 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if let navi = navigationController {
+            navi.setNavigationBarHidden(true, animated: false)
+        }
+        (navigationController?.parentViewController as! ZYMainViewController).showTabBar()
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
     }
     
@@ -66,7 +69,7 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
             label.textAlignment = NSTextAlignment.Center
             label.text = day
             if day == "日" || day == "六" {
-                label.textColor = UIColor.hexColorWithAlpha(0xffffff, alpha: 0.5)
+                label.alpha = 0.5
             }
             calendarDayContainer.addSubview(label)
         }
@@ -109,17 +112,15 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let item = scheduleData[indexPath.row]
         item.selected = !item.selected
+        for data in scheduleData {
+            if data != item {
+                data.selected = false
+            }
+        }
         tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
     @IBAction func addNewAction(sender: AnyObject) {
-        if newScheduleView == nil {
-            newScheduleView = ZYNewScheduleView.getInstance()
-            newScheduleView?.size = CGSizeMake(view.width, 440)
-            newScheduleView?.center = CGPointMake(view.width / 2, view.height / 2)
-            newScheduleView?.layoutIfNeeded()
-            view.addSubview(newScheduleView!)
-        }
-        newScheduleView?.hidden = false
+        navigationController?.pushViewController(ZYSpeechInputViewController.getInstance(), animated: true)
     }
 }

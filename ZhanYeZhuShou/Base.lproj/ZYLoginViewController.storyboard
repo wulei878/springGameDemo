@@ -73,7 +73,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="ww5-Cx-g9T"/>
                                                         </constraints>
-                                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                                         <connections>
@@ -224,7 +224,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-hP-ago" customClass="ZYCustomTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cdq-hP-ago" customClass="ZYCustomTextField" customModule="ZhanYeZhuShou" customModuleProvider="target">
                                 <rect key="frame" x="25" y="116" width="270" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="xxg-bO-Wxv"/>
@@ -273,7 +273,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DnX-uu-rCH">
-                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back" id="y6N-UT-sM4">
+                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back_blue" id="y6N-UT-sM4">
                             <connections>
                                 <action selector="goBack:" destination="mGR-tT-zVt" id="DcI-9B-Pkz"/>
                             </connections>
@@ -348,7 +348,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wq0-ig-GUr">
-                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back" id="S7h-DK-SSv">
+                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back_blue" id="S7h-DK-SSv">
                             <connections>
                                 <action selector="goBack:" destination="GkY-Ks-Lrh" id="M5w-5q-bu7"/>
                             </connections>
@@ -382,7 +382,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ZHx-SV-slH"/>
                                 </constraints>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
@@ -401,7 +401,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="ZKi-Ic-73h"/>
                                 </constraints>
-                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
@@ -450,7 +450,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HxA-L3-KEY">
-                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back" id="JM4-dI-xtU">
+                        <barButtonItem key="leftBarButtonItem" image="navigationbar_back_blue" id="JM4-dI-xtU">
                             <connections>
                                 <action selector="goBack:" destination="7xt-Jb-ES4" id="HdE-Dn-LhH"/>
                             </connections>
@@ -472,6 +472,6 @@
     </scenes>
     <resources>
         <image name="loginIcon" width="21" height="65"/>
-        <image name="navigationbar_back" width="44" height="44"/>
+        <image name="navigationbar_back_blue" width="44" height="44"/>
     </resources>
 </document>

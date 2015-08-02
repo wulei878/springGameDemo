@@ -22,12 +22,18 @@ class ZYSetPasswordViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var attributeString = NSAttributedString(string: "再次输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x747083),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
+        var attributeString = NSAttributedString(string: "再次输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x999999),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
         confirmTextField.attributedPlaceholder = attributeString
         doneButton.enabled = false
         doneButton.setBackgroundImage(UIImage.imageWithColor(UIColor.hexColor(0xd3d3d3)), forState: .Disabled)
         doneButton.setBackgroundImage(UIImage.imageWithColor(UIColor.hexColor(0x33b7ff)), forState: .Normal)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "textFieldTextDidChange", name: UITextFieldTextDidChangeNotification, object: nil)
+        let tap1 = UITapGestureRecognizer(target: self, action: "showPassword:")
+        passwordTextField.rightView!.addGestureRecognizer(tap1)
+        passwordTextField.rightView?.tag = 1
+        let tap2 = UITapGestureRecognizer(target: self, action: "showPassword:")
+        confirmTextField.rightView!.addGestureRecognizer(tap2)
+        confirmTextField.rightView?.tag = 2
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,13 +66,17 @@ class ZYSetPasswordViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func doneAction(sender: AnyObject) {
-        let window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window.makeKeyAndVisible()
-        window.rootViewController = ZYMainViewController.getInstance()
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.changeRootViewController(ZYMainViewController.getInstance())
     }
 
     @IBAction func goBack(sender: AnyObject) {
         navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func showPassword(gesture:UITapGestureRecognizer) {
+        let textField = gesture.view?.tag == 1 ? passwordTextField : confirmTextField
+        textField.secureTextEntry = !textField.secureTextEntry
     }
     
     deinit {

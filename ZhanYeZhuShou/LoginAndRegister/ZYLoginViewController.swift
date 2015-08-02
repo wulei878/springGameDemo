@@ -26,7 +26,7 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
         super.viewDidLoad()
         registerButton.layer.borderWidth = 1 / UIScreen.mainScreen().scale
         registerButton.layer.borderColor = UIColor.hexColor(0x33b7ff).CGColor
-        let tap = UITapGestureRecognizer(target: self, action: "showPassword")
+        let tap = UITapGestureRecognizer(target: self, action: "showPassword:")
         passwordTextField.rightView!.addGestureRecognizer(tap)
         for heightConstraint in separatorHeightArray {
             heightConstraint.constant /= UIScreen.mainScreen().scale
@@ -49,10 +49,6 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
         NSNotificationCenter.defaultCenter().removeObserver(self)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -90,16 +86,20 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
     }
 
     @IBAction func loginAction(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.changeRootViewController(ZYMainViewController.getInstance())
     }
 
     @IBAction func forgotPasswordAction(sender: AnyObject) {
+        navigationController?.pushViewController(ZYInputtingPhoneNumViewController.getInstance(), animated: true)
     }
     @IBAction func registerAction(sender: AnyObject) {
         let viewController = ZYInputtingPhoneNumViewController.getInstance()
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func showPassword() {
+    func showPassword(gesture:UITapGestureRecognizer) {
+        passwordTextField.secureTextEntry = !passwordTextField.secureTextEntry
     }
     
 }

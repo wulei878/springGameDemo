@@ -16,10 +16,14 @@ class ZYScheduleCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var separator: UIView!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var delayButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         separatorHeight.constant /= UIScreen.mainScreen().scale
+        UIButton.changeButtonsVertical(5, buttons: [doneButton,delayButton,editButton])
     }
     
     func configData(item:ZYMScheduleItem) {

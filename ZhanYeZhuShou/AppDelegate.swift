@@ -17,13 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UINavigationBar.appearance().translucent = false
         UINavigationBar.appearance().barTintColor = UIColor.whiteColor()
-//        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor()]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarPosition: .Any, barMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = ZYMainViewController.getInstance()
+        window?.rootViewController = ZYLoginViewController.getInstance()
         return true
     }
 
@@ -48,7 +47,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    func changeRootViewController(viewController:UIViewController) {
+        if window?.rootViewController != nil {
+            window?.rootViewController = viewController
+            return
+        }
+        
+        let snapShot = window?.snapshotViewAfterScreenUpdates(true)
+        viewController.view.addSubview(snapShot!)
+        window?.rootViewController = viewController
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            snapShot?.layer.opacity = 0
+            snapShot?.layer.transform = CATransform3DMakeScale(1.5, 1.5, 1.5)
+            }) { (flag) -> Void in
+            snapShot?.removeFromSuperview()
+        }
+    }
 }
 

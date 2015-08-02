@@ -24,10 +24,13 @@ class ZYCalendarCell: UICollectionViewCell {
     
     func configData(data:ZYMCalendarItem) {
         dayNumButton.setTitle("\(data.dayNum)", forState: .Normal)
+        dayNumButton.setTitleColor(UIColor.hexColorWithAlpha(0xffffff, alpha: 1), forState: .Normal)
         if data.day == 0 || data.day == 6 {
-            dayNumButton.setTitleColor(UIColor.hexColorWithAlpha(0xffffff, alpha: 0.5), forState: .Normal)
+            dayNumButton.alpha = 0.5
         } else {
-            dayNumButton.setTitleColor(UIColor.hexColorWithAlpha(0xffffff, alpha: 1), forState: .Normal)
+            dayNumButton.alpha = 1
         }
+        whiteDot.alpha = dayNumButton.alpha
     }
 }
+ 

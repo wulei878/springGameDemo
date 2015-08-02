@@ -23,8 +23,17 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.navigationBar.barTintColor = UIColor.hexColor(0x33b7ff)
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+        (navigationController?.parentViewController as! ZYMainViewController).showTabBar()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let navi = navigationController {
+            (navi.parentViewController as! ZYMainViewController).hideTabBar()
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,12 +48,17 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        navigationController?.pushViewController(ZYFriendProfileViewController.getInstance(), animated: true)
+    }
 
     @IBAction func messageAction(sender: AnyObject) {
     }
     
     @IBAction func newFriendAction(sender: AnyObject) {
-        
+        navigationController?.pushViewController(ZYChooseWayToAddViewController.getInstance(), animated: true)
     }
     
 }

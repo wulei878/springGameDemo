@@ -46,7 +46,7 @@ class ZYCustomTextField: UITextField {
 class ZYPasswordTextField:ZYCustomTextField {
     override func awakeFromNib() {
         super.awakeFromNib()
-        var attributeString = NSAttributedString(string: "请输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x747083),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
+        var attributeString = NSAttributedString(string: "请输入密码", attributes: [NSForegroundColorAttributeName:UIColor.hexColor(0x999999),NSFontAttributeName:UIFont(name: "STHeitiSC-Light", size: 18.0)!])
         attributedPlaceholder = attributeString
         var imageView = UIImageView(image: UIImage(named: "show_password"))
         imageView.frame.size = CGSizeMake(44, 44)
