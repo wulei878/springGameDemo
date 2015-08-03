@@ -19,8 +19,9 @@ class ZYLoginViewController: UIViewController,UIScrollViewDelegate,UITextFieldDe
     var currentTextField:UITextField?
     @IBOutlet weak var secondPartView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
-    class func getInstance()->UINavigationController {
-        return UIStoryboard(name: "ZYLoginViewController", bundle: nil).instantiateInitialViewController() as! UINavigationController
+    
+    class func getInstance()->ZYLoginViewController {
+        return UIStoryboard(name: "ZYLoginViewController", bundle: nil).instantiateViewControllerWithIdentifier("ZYLoginViewController") as! ZYLoginViewController
     }
     override func viewDidLoad() {
         super.viewDidLoad()

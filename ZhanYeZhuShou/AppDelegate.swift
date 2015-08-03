@@ -22,9 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().shadowImage = UIImage()
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = ZYLoginViewController.getInstance()
+        let thirdPartyManager = GZThirdPartyManager.sharedInstance()
+        thirdPartyManager.uploadAppKey()
+        window?.rootViewController = ZYMainViewController.getInstance()
         return true
     }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool
+    {
+        return GZThirdPartyManager.sharedInstance().handleOpenURL(url)
+    }
+
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

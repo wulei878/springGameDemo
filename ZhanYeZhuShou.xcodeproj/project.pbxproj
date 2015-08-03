@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		5A06E8FD1B6E067F00A55B67 /* ZYSpeechInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A06E8FC1B6E067F00A55B67 /* ZYSpeechInputViewController.swift */; };
+		5A66902F1B6F94FE00B8A6E2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A66902E1B6F94FE00B8A6E2 /* libc++.dylib */; };
+		5A6690381B6F95A000B8A6E2 /* GZThirdPartyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690331B6F95A000B8A6E2 /* GZThirdPartyManager.m */; };
+		5A6690391B6F95A000B8A6E2 /* GZThirdPartyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690351B6F95A000B8A6E2 /* GZThirdPartyObject.m */; };
+		5A66903A1B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690371B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m */; };
+		5A6690471B6F9AB600B8A6E2 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6690431B6F9AB600B8A6E2 /* libWeChatSDK.a */; };
+		5A6690481B6F9AB600B8A6E2 /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A6690441B6F9AB600B8A6E2 /* read_me.txt */; };
+		5A66904A1B6F9CEC00B8A6E2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6690491B6F9CEC00B8A6E2 /* SystemConfiguration.framework */; };
+		5A66904C1B6F9D0700B8A6E2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A66904B1B6F9D0700B8A6E2 /* libz.dylib */; };
+		5A66904E1B6F9D1800B8A6E2 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A66904D1B6F9D1800B8A6E2 /* libsqlite3.0.dylib */; };
+		5A6690501B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A66904F1B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift */; };
+		5A6690521B6FB84200B8A6E2 /* ZYMUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690511B6FB84200B8A6E2 /* ZYMUserItem.swift */; };
+		5A6690541B6FBA6500B8A6E2 /* ZYUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */; };
 		5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */; };
 		5A8D205C1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */; };
 		5A8D205E1B6D93E3004E07D4 /* ZYNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D205D1B6D93E3004E07D4 /* ZYNewFriendViewController.swift */; };
@@ -49,6 +61,23 @@
 
 /* Begin PBXFileReference section */
 		5A06E8FC1B6E067F00A55B67 /* ZYSpeechInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYSpeechInputViewController.swift; sourceTree = "<group>"; };
+		5A66902E1B6F94FE00B8A6E2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		5A6690321B6F95A000B8A6E2 /* GZThirdPartyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZThirdPartyManager.h; sourceTree = "<group>"; };
+		5A6690331B6F95A000B8A6E2 /* GZThirdPartyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZThirdPartyManager.m; sourceTree = "<group>"; };
+		5A6690341B6F95A000B8A6E2 /* GZThirdPartyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZThirdPartyObject.h; sourceTree = "<group>"; };
+		5A6690351B6F95A000B8A6E2 /* GZThirdPartyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZThirdPartyObject.m; sourceTree = "<group>"; };
+		5A6690361B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZThirdPartyWeChatManager.h; sourceTree = "<group>"; };
+		5A6690371B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZThirdPartyWeChatManager.m; sourceTree = "<group>"; };
+		5A6690431B6F9AB600B8A6E2 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		5A6690441B6F9AB600B8A6E2 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
+		5A6690451B6F9AB600B8A6E2 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		5A6690461B6F9AB600B8A6E2 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		5A6690491B6F9CEC00B8A6E2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5A66904B1B6F9D0700B8A6E2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5A66904D1B6F9D1800B8A6E2 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		5A66904F1B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYPreLoginViewController.swift; sourceTree = "<group>"; };
+		5A6690511B6FB84200B8A6E2 /* ZYMUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYMUserItem.swift; path = ZhanYeZhuShou/Model/ZYMUserItem.swift; sourceTree = SOURCE_ROOT; };
+		5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYUserManager.swift; sourceTree = "<group>"; };
 		5A7FB2501B67D7D00085184C /* Biu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biu-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYAddressBookCell.swift; sourceTree = "<group>"; };
 		5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYChooseWayToAddViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +135,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A66904E1B6F9D1800B8A6E2 /* libsqlite3.0.dylib in Frameworks */,
+				5A66904C1B6F9D0700B8A6E2 /* libz.dylib in Frameworks */,
+				5A66904A1B6F9CEC00B8A6E2 /* SystemConfiguration.framework in Frameworks */,
+				5A66902F1B6F94FE00B8A6E2 /* libc++.dylib in Frameworks */,
 				DFD5C7EA7400A18E010346DF /* libPods-ZhanYeZhuShou.a in Frameworks */,
+				5A6690471B6F9AB600B8A6E2 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +154,31 @@
 				737FAC887EF98E99901B431E /* Pods-ZhanYeZhuShou.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5A6690311B6F95A000B8A6E2 /* thirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				5A6690421B6F9AB600B8A6E2 /* WeChatSDK_1.5 */,
+				5A6690321B6F95A000B8A6E2 /* GZThirdPartyManager.h */,
+				5A6690331B6F95A000B8A6E2 /* GZThirdPartyManager.m */,
+				5A6690341B6F95A000B8A6E2 /* GZThirdPartyObject.h */,
+				5A6690351B6F95A000B8A6E2 /* GZThirdPartyObject.m */,
+				5A6690361B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.h */,
+				5A6690371B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m */,
+			);
+			path = thirdParty;
+			sourceTree = "<group>";
+		};
+		5A6690421B6F9AB600B8A6E2 /* WeChatSDK_1.5 */ = {
+			isa = PBXGroup;
+			children = (
+				5A6690431B6F9AB600B8A6E2 /* libWeChatSDK.a */,
+				5A6690441B6F9AB600B8A6E2 /* read_me.txt */,
+				5A6690451B6F9AB600B8A6E2 /* WXApi.h */,
+				5A6690461B6F9AB600B8A6E2 /* WXApiObject.h */,
+			);
+			path = WeChatSDK_1.5;
 			sourceTree = "<group>";
 		};
 		5A9C25A91B671B9400779546 = {
@@ -168,7 +227,9 @@
 		5A9C25DF1B67C7A400779546 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				5A6690311B6F95A000B8A6E2 /* thirdParty */,
 				5A9C25F91B67C89600779546 /* ZYCustomTextField.swift */,
+				5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */,
 				5A9C25E01B67C7A400779546 /* MBProgressHUD+CommonShow.h */,
 				5A9C25E11B67C7A400779546 /* MBProgressHUD+CommonShow.m */,
 				5A9C25E21B67C7A400779546 /* UIView+Additions.h */,
@@ -194,6 +255,7 @@
 			children = (
 				5AA7DBA11B6BA95B006DB05F /* ZYMCalendarItem.swift */,
 				5AA7DBA51B6BC90F006DB05F /* ZYMScheduleItem.swift */,
+				5A6690511B6FB84200B8A6E2 /* ZYMUserItem.swift */,
 			);
 			name = Model;
 			path = model;
@@ -231,6 +293,7 @@
 				5ACBE8421B6935A200886C49 /* ZYSetPasswordViewController.swift */,
 				5ACBE8431B6935A200886C49 /* ZYVerificationCodeViewController.swift */,
 				5A9C25BB1B671B9400779546 /* ZYLoginViewController.storyboard */,
+				5A66904F1B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift */,
 			);
 			path = LoginAndRegister;
 			sourceTree = "<group>";
@@ -238,6 +301,10 @@
 		8E318E605CB44B0094D4A5A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A66904D1B6F9D1800B8A6E2 /* libsqlite3.0.dylib */,
+				5A66904B1B6F9D0700B8A6E2 /* libz.dylib */,
+				5A6690491B6F9CEC00B8A6E2 /* SystemConfiguration.framework */,
+				5A66902E1B6F94FE00B8A6E2 /* libc++.dylib */,
 				611A3206BF344017BA9614C2 /* libPods-ZhanYeZhuShou.a */,
 			);
 			name = Frameworks;
@@ -308,6 +375,7 @@
 				5A9C25BF1B671B9400779546 /* Images.xcassets in Resources */,
 				5AA7DBC01B6BD757006DB05F /* Main.storyboard in Resources */,
 				5AA7DBC31B6BD757006DB05F /* ZYElementViews.xib in Resources */,
+				5A6690481B6F9AB600B8A6E2 /* read_me.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +424,7 @@
 				5A9C25FA1B67C89600779546 /* ZYCustomTextField.swift in Sources */,
 				5A8D20641B6DDA11004E07D4 /* ZYFriendProfileLogCell.swift in Sources */,
 				5A9C25F11B67C7A400779546 /* UIView+Additions.m in Sources */,
+				5A6690501B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift in Sources */,
 				5A9C25F81B67C7A400779546 /* XGUtility.m in Sources */,
 				5AA7DBC41B6BD757006DB05F /* ZYMainViewController.swift in Sources */,
 				5ACBE8451B6935A200886C49 /* ZYLoginViewController.swift in Sources */,
@@ -364,16 +433,20 @@
 				5A9C25F01B67C7A400779546 /* MBProgressHUD+CommonShow.m in Sources */,
 				5A9C25F51B67C7A400779546 /* XGGlobalURL.m in Sources */,
 				5A9C25F41B67C7A400779546 /* XGFileInfo.m in Sources */,
+				5A6690391B6F95A000B8A6E2 /* GZThirdPartyObject.m in Sources */,
 				5AA7DBC51B6BD757006DB05F /* ZYPersonalViewController.swift in Sources */,
 				5A9C25F61B67C7A400779546 /* XGGlobalVariables.m in Sources */,
 				5A8D20601B6DD999004E07D4 /* ZYFriendProfileViewController.swift in Sources */,
+				5A6690521B6FB84200B8A6E2 /* ZYMUserItem.swift in Sources */,
 				5AA7DBA21B6BA95B006DB05F /* ZYMCalendarItem.swift in Sources */,
+				5A6690541B6FBA6500B8A6E2 /* ZYUserManager.swift in Sources */,
 				5A9C25F21B67C7A400779546 /* XGAppCommon.swift in Sources */,
 				5AA7DBC61B6BD757006DB05F /* ZYScheduleCell.swift in Sources */,
 				5ACBE8471B6935A200886C49 /* ZYVerificationCodeViewController.swift in Sources */,
 				5A06E8FD1B6E067F00A55B67 /* ZYSpeechInputViewController.swift in Sources */,
 				5ACBE8461B6935A200886C49 /* ZYSetPasswordViewController.swift in Sources */,
 				5A9C25F71B67C7A400779546 /* XGSingletonObject.m in Sources */,
+				5A6690381B6F95A000B8A6E2 /* GZThirdPartyManager.m in Sources */,
 				5A9C25B81B671B9400779546 /* AppDelegate.swift in Sources */,
 				5A8D205C1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift in Sources */,
 				5AA7DBC11B6BD757006DB05F /* ZYAddressBookViewController.swift in Sources */,
@@ -382,6 +455,7 @@
 				5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */,
 				5AA7DBA61B6BC90F006DB05F /* ZYMScheduleItem.swift in Sources */,
 				5AA7DBC91B6BE22A006DB05F /* ZYNewScheduleViewController.swift in Sources */,
+				5A66903A1B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,11 +571,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FA9CA546B578FDCEC60C891 /* Pods-ZhanYeZhuShou.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SWIFT_MODULE_NAME)/Biu-PrefixHeader.pch";
 				INFOPLIST_FILE = ZhanYeZhuShou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"${PODS_ROOT}/**",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/thirdParty/WeChatSDK_1.5",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Biu-Bridging-Header.h";
 			};
@@ -511,11 +591,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 737FAC887EF98E99901B431E /* Pods-ZhanYeZhuShou.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SWIFT_MODULE_NAME)/Biu-PrefixHeader.pch";
 				INFOPLIST_FILE = ZhanYeZhuShou/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"${PODS_ROOT}/**",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/thirdParty/WeChatSDK_1.5",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Biu-Bridging-Header.h";
 			};

@@ -58,7 +58,12 @@ class ZYMainViewController: UIViewController {
         case addressBookButton:
             toRootViewController = viewControllers[1]
         case personalButton:
-            toRootViewController = viewControllers[2]
+            if ZYUserManager.sharedManager.userItem != nil {
+                toRootViewController = viewControllers[2]
+            } else {
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                appDelegate.changeRootViewController(ZYPreLoginViewController.getInstance())
+            }
         default:
             println("not suppose to happen")
         }

@@ -11,6 +11,7 @@ import UIKit
 class ZYPersonalViewController: UITableViewController {
     @IBOutlet var separatorHeightArray: [NSLayoutConstraint]!
 
+    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var headerImageView: UIImageView!
     class func getInstance() -> ZYPersonalViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYPersonalViewController") as! ZYPersonalViewController
@@ -21,8 +22,10 @@ class ZYPersonalViewController: UITableViewController {
         for separatorHeight in separatorHeightArray {
             separatorHeight.constant /= UIScreen.mainScreen().scale
         }
+        let userItem = ZYUserManager.sharedManager.userItem
         headerImageView.clipsToRound()
-        headerImageView.image = UIImage.imageWithColor(UIColor.hexColor(0x33b7ff))
+        headerImageView.sd_setImageWithURL(userItem?.headURL, placeholderImage: UIImage.imageWithColor(UIColor.hexColor(0x33b7ff)))
+        userNameLabel.text = userItem?.userName
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,8 +44,11 @@ class ZYPersonalViewController: UITableViewController {
     }
     
     @IBAction func logoutAction(sender: AnyObject) {
+        let object = GZThirdPartyObject()
+        object.shareDestionation = .WeixinLogout
+        GZThirdPartyManager.sharedInstance().logoutWithShareObject(object)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.changeRootViewController(ZYLoginViewController.getInstance())
+        appDelegate.changeRootViewController(ZYPreLoginViewController.getInstance())
     }
     
 }
