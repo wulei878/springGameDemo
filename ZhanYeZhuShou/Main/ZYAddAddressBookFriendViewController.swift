@@ -43,7 +43,7 @@ class ZYAddAddressBookFriendViewController: UIViewController,ABPeoplePickerNavig
                 UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
             })
         } else {
-            
+            navigationController?.pushViewController(ZYOpenAddressGuideViewController.getInstance(), animated: true)
         }
     }
 

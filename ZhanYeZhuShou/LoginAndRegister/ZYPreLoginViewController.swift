@@ -47,8 +47,11 @@ class ZYPreLoginViewController: UIViewController {
         thirdParty.thirdPartyActionWithShareObject(thirdPartyObject, completionBlock: { (errorCode, info) -> Void in
             if errorCode == 0 {
                 thirdParty.getUserInfoWithShareObject(thirdPartyObject, completionBlock: { (errorCode, dic) -> Void in
-                    let userItem = ZYMUserItem(dic: dic)
+                    let userItem = ZYMUserItem()
+                    userItem.setObject(dic)
                     ZYUserManager.sharedManager.userItem = userItem
+                    userItem.wechatToken = info["token"] as? String
+                    NSKeyedArchiver.archiveRootObject(userItem, toFile: XGFileInfo.filePathAppendingUserIDWithString("UserInfo"))
                     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     appDelegate.changeRootViewController(ZYMainViewController.getInstance())
                 })

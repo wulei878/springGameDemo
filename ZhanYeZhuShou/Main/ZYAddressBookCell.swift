@@ -11,6 +11,7 @@ import UIKit
 protocol ZYAddressBookCellProtocol:NSObjectProtocol {
     func addressBookCellMakePhoneCall(cell:ZYAddressBookCell)
     func addressBookCellSendMessage(cell:ZYAddressBookCell)
+    func addressBookCellViewPersonalMainPage(cell:ZYAddressBookCell)
 }
 
 class ZYAddressBookCell: UITableViewCell {
@@ -23,6 +24,8 @@ class ZYAddressBookCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         separatorHeight.constant /= UIScreen.mainScreen().scale
+        let tap = UITapGestureRecognizer(target: self, action: "tapAction")
+        contentView.addGestureRecognizer(tap)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -35,5 +38,9 @@ class ZYAddressBookCell: UITableViewCell {
     
     @IBAction func messageAction(sender: AnyObject) {
         addressBookCellProtocol?.addressBookCellSendMessage(self)
+    }
+    
+    func tapAction() {
+        addressBookCellProtocol?.addressBookCellViewPersonalMainPage(self)
     }
 }

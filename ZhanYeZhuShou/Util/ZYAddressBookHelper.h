@@ -51,6 +51,8 @@ typedef void (^ZYAddressBookHelperFailBlock)(BOOL failed);
 // QQ
 @property (nonatomic, copy) NSString *qq;
 
+@property(nonatomic,copy) NSString *companyName;
+@property(nonatomic,copy) NSString *job;
 - (id)initWithABRecord:(ABRecordRef)person;
 
 @end

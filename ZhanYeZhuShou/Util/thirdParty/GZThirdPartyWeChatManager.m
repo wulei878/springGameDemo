@@ -10,6 +10,7 @@
 #import "GZThirdPartyWeChatManager.h"
 #import "WXApi.h"
 //#import "RLUtility.h"
+#import "XGFileInfo.h"
 
 static NSString *kUMAppKey = @"54b8f24efd98c50d15000aa2";
 static NSString *kWeChatAppSecretKey = @"02b1699422ff691735843a7853a0fc8f";
@@ -72,6 +73,10 @@ static NSString *kWeChatAppKey = @"wx82dac282b479ccbb";
 - (BOOL)handleOpenURL:(NSURL *)url
 {
     return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (void)saveWeChatToken {
+    [NSKeyedArchiver archiveRootObject:self.token toFile:[XGFileInfo filePathAppendingUserIDWithString:@"wechatToken"]];
 }
 
 - (void)uploadWeChatAppKey
@@ -211,6 +216,7 @@ static NSString *kWeChatAppKey = @"wx82dac282b479ccbb";
             self.refreshToken = json[@"refresh_token"];
             self.expireData = json[@"expires_in"];
             if (self.thirdPartyObject.shareDestionation == EThirdPartyWeChatLogin) {
+//                [self saveWeChatToken];
                 self.completionBlock(0, @{@"userID":self.userID, @"token":self.token});
             } else {
                 [self shareToWeChat];

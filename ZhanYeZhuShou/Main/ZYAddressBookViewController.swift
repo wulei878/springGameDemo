@@ -8,8 +8,10 @@
 
 import UIKit
 import MessageUI
+import AddressBook
+import AddressBookUI
 
-class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMessageComposeViewControllerDelegate,ZYAddressBookCellProtocol {
+class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMessageComposeViewControllerDelegate,ZYAddressBookCellProtocol,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,ABPeoplePickerNavigationControllerDelegate,ZYNewFriendViewControllerProtocol {
     @IBOutlet weak var titleMessageButton: UIButton!
     @IBOutlet weak var newFriendButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -18,6 +20,8 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var addByAddressBookButton: UIView!
     @IBOutlet weak var addByInputButton: UIView!
     var buttons:[UIView]!
+    var contacters = [ZYMContactor]()
+    var phoneCallWebView:UIWebView!
     
     @IBOutlet var separatorHeight: [NSLayoutConstraint]!
 
@@ -55,6 +59,10 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ZYAddressBookCell", forIndexPath: indexPath) as! ZYAddressBookCell
+        let user = contacters[indexPath.row]
+        cell.nameLabel.text = user.firstName
+        cell.descLabel.text = user.job
+        cell.addressBookCellProtocol = self
         return cell
     }
     
@@ -63,7 +71,7 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return contacters.count
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -76,6 +84,9 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
             var vc = MFMessageComposeViewController()
             vc.messageComposeDelegate = self
             vc.body = "这是一封短信"
+            presentViewController(vc, animated: true, completion: { () -> Void in
+                UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+            })
         }
     }
     
@@ -97,11 +108,27 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     
     func tapAction(tapGesutre:UITapGestureRecognizer) {
         if tapGesutre.view == addByAddressBookButton {
-            navigationController?.pushViewController(ZYAddAddressBookFriendViewController.getInstance(), animated: true)
+            if !NSUserDefaults.standardUserDefaults().boolForKey("accessToAddressBook") {
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "accessToAddressBook")
+                navigationController?.pushViewController(ZYAddAddressBookFriendViewController.getInstance(), animated: true)
+                return
+            }
+            if ZYAddressBookHelper.sharedInstance().canAccessAdressBook() {
+                let peoplePicker = ABPeoplePickerNavigationController()
+                peoplePicker.peoplePickerDelegate = self
+                presentViewController(peoplePicker, animated: true, completion: { () -> Void in
+                    UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+                })
+            } else {
+                navigationController?.pushViewController(ZYOpenAddressGuideViewController.getInstance(), animated: true)
+            }
         } else if tapGesutre.view == addByInputButton {
-            navigationController?.pushViewController(ZYNewFriendViewController.getInstance(), animated: true)
+            let vc = ZYNewFriendViewController.getInstance()
+            vc.delegate = self
+            navigationController?.pushViewController(vc, animated: true)
         } else {
-            
+            let actionSheet = UIActionSheet(title: nil, delegate: self, cancelButtonTitle: "取消", destructiveButtonTitle: nil, otherButtonTitles: "从照片选取","拍照")
+            actionSheet.showInView(view)
         }
     }
     
@@ -109,13 +136,77 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
         addTypeView.hidden = !addTypeView.hidden
     }
     
+    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.modalTransitionStyle = .CoverVertical
+        imagePicker.allowsEditing = true
+
+        if buttonIndex == 0 {
+            actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
+            return
+        } else if buttonIndex == 1 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        } else if buttonIndex == 2 {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        }
+        actionSheet.dismissWithClickedButtonIndex(buttonIndex, animated: true)
+        presentViewController(imagePicker, animated: true, completion: { () -> Void in
+            UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+        })
+    }
+    
     func addressBookCellMakePhoneCall(cell: ZYAddressBookCell) {
         let index = tableView.indexPathForCell(cell)?.row
-        
+        let phoneNums = contacters[index!].phoneNumbers[0] as! [String:String]
+        var phoneNum = ""
+        for (key,value) in phoneNums {
+            phoneNum = value
+            break
+        }
+        if phoneCallWebView == nil {
+            phoneCallWebView = UIWebView(frame: CGRectZero)
+        }
+        if phoneNum != "" {
+            phoneCallWebView.loadRequest(NSURLRequest(URL: NSURL(string: "tel:" + phoneNum)!))   
+        }
     }
     
     func addressBookCellSendMessage(cell: ZYAddressBookCell) {
         let index = tableView.indexPathForCell(cell)?.row
+        let phoneNums = contacters[index!].phoneNumbers[0] as! [String:String]
+        var phoneNum = ""
+        for (key,value) in phoneNums {
+            phoneNum = value
+            break
+        }
+        if MFMessageComposeViewController.canSendText() {
+            var vc = MFMessageComposeViewController()
+            vc.messageComposeDelegate = self
+            vc.body = "这是一封短信"
+            vc.recipients = [phoneNum]
+            presentViewController(vc, animated: true, completion: { () -> Void in
+                UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: false)
+            })
+        }
     }
     
+    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!, didSelectPerson person: ABRecord!) {
+        let vc = ZYNewFriendViewController.getInstance()
+        vc.newFriend = ZYMContactor(ABRecord: person)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func newFriendViewControllerDidFinished(contacter: ZYMContactor) {
+        contacters.append(contacter)
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    func addressBookCellViewPersonalMainPage(cell: ZYAddressBookCell) {
+        let index = tableView.indexPathForCell(cell)?.row
+        let contacter = contacters[index!]
+        let vc = ZYFriendProfileViewController.getInstance()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

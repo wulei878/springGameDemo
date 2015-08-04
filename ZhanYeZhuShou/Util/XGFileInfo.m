@@ -20,11 +20,11 @@
 
 + (NSString *)filePathAppendingUserIDWithString:(NSString *)plistName
 {
-//    NSArray *paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-//    NSString *plistPath = [paths objectAtIndex:0];
-//    NSString *filePath = [plistPath stringByAppendingPathComponent:@([PTCurrentUserManager sharedInstance].currentUserId).stringValue];
-//    filePath = [filePath stringByAppendingPathComponent:plistName];
-    return nil;
+    NSArray *paths= NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *plistPath = [paths objectAtIndex:0];
+    NSString *filePath = [plistPath stringByAppendingPathComponent:[ZYUserManager sharedManager].userItem.userID];
+    filePath = [filePath stringByAppendingPathComponent:plistName];
+    return filePath;
 }
 
 @end

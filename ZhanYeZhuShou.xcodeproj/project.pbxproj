@@ -59,6 +59,15 @@
 		5ACBE8461B6935A200886C49 /* ZYSetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBE8421B6935A200886C49 /* ZYSetPasswordViewController.swift */; };
 		5ACBE8471B6935A200886C49 /* ZYVerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ACBE8431B6935A200886C49 /* ZYVerificationCodeViewController.swift */; };
 		5AE7A4861B6BE719007D8678 /* ZYNewScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE7A4851B6BE719007D8678 /* ZYNewScheduleView.xib */; };
+		5AEFD8091B70B8DE00D791B3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFD8081B70B8DE00D791B3 /* OpenGLES.framework */; };
+		5AEFD80B1B70B8EA00D791B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFD80A1B70B8EA00D791B3 /* QuartzCore.framework */; };
+		5AEFD80D1B70B8F400D791B3 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFD80C1B70B8F400D791B3 /* GLKit.framework */; };
+		5AEFD80F1B70B90100D791B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFD80E1B70B90100D791B3 /* CoreGraphics.framework */; };
+		5AEFD8111B70B90A00D791B3 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEFD8101B70B90A00D791B3 /* CoreText.framework */; };
+		5AEFD8211B710FB400D791B3 /* ZYOpenAddressGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFD8201B710FB400D791B3 /* ZYOpenAddressGuideViewController.swift */; };
+		5AEFD8241B71230600D791B3 /* UIImage+Addtional.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFD8231B71230600D791B3 /* UIImage+Addtional.m */; };
+		5AEFD8291B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFD8261B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.m */; };
+		5AEFD82A1B7124B800D791B3 /* XGHttpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFD8281B7124B800D791B3 /* XGHttpManager.m */; };
 		DFD5C7EA7400A18E010346DF /* libPods-ZhanYeZhuShou.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 611A3206BF344017BA9614C2 /* libPods-ZhanYeZhuShou.a */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +141,18 @@
 		5ACBE8421B6935A200886C49 /* ZYSetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYSetPasswordViewController.swift; sourceTree = "<group>"; };
 		5ACBE8431B6935A200886C49 /* ZYVerificationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYVerificationCodeViewController.swift; sourceTree = "<group>"; };
 		5AE7A4851B6BE719007D8678 /* ZYNewScheduleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYNewScheduleView.xib; sourceTree = "<group>"; };
+		5AEFD8081B70B8DE00D791B3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5AEFD80A1B70B8EA00D791B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5AEFD80C1B70B8F400D791B3 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		5AEFD80E1B70B90100D791B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5AEFD8101B70B90A00D791B3 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		5AEFD8201B710FB400D791B3 /* ZYOpenAddressGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYOpenAddressGuideViewController.swift; sourceTree = "<group>"; };
+		5AEFD8221B71230600D791B3 /* UIImage+Addtional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Addtional.h"; sourceTree = "<group>"; };
+		5AEFD8231B71230600D791B3 /* UIImage+Addtional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Addtional.m"; sourceTree = "<group>"; };
+		5AEFD8251B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperationManager+UploadProgress.h"; sourceTree = "<group>"; };
+		5AEFD8261B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+UploadProgress.m"; sourceTree = "<group>"; };
+		5AEFD8271B7124B800D791B3 /* XGHttpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGHttpManager.h; sourceTree = "<group>"; };
+		5AEFD8281B7124B800D791B3 /* XGHttpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGHttpManager.m; sourceTree = "<group>"; };
 		5FA9CA546B578FDCEC60C891 /* Pods-ZhanYeZhuShou.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhanYeZhuShou.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZhanYeZhuShou/Pods-ZhanYeZhuShou.debug.xcconfig"; sourceTree = "<group>"; };
 		611A3206BF344017BA9614C2 /* libPods-ZhanYeZhuShou.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZhanYeZhuShou.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		737FAC887EF98E99901B431E /* Pods-ZhanYeZhuShou.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZhanYeZhuShou.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZhanYeZhuShou/Pods-ZhanYeZhuShou.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +163,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEFD8111B70B90A00D791B3 /* CoreText.framework in Frameworks */,
+				5AEFD80F1B70B90100D791B3 /* CoreGraphics.framework in Frameworks */,
+				5AEFD80D1B70B8F400D791B3 /* GLKit.framework in Frameworks */,
+				5AEFD80B1B70B8EA00D791B3 /* QuartzCore.framework in Frameworks */,
+				5AEFD8091B70B8DE00D791B3 /* OpenGLES.framework in Frameworks */,
 				5A66904E1B6F9D1800B8A6E2 /* libsqlite3.0.dylib in Frameworks */,
 				5A66904C1B6F9D0700B8A6E2 /* libz.dylib in Frameworks */,
 				5A66904A1B6F9CEC00B8A6E2 /* SystemConfiguration.framework in Frameworks */,
@@ -235,12 +261,18 @@
 			isa = PBXGroup;
 			children = (
 				5A6690311B6F95A000B8A6E2 /* thirdParty */,
+				5AEFD8221B71230600D791B3 /* UIImage+Addtional.h */,
+				5AEFD8231B71230600D791B3 /* UIImage+Addtional.m */,
 				5A9C25F91B67C89600779546 /* ZYCustomTextField.swift */,
 				5A7E9ACB1B70898900550F11 /* ZYAddressBookHelper.h */,
 				5A7E9ACC1B70898900550F11 /* ZYAddressBookHelper.m */,
 				5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */,
 				5A9C25E01B67C7A400779546 /* MBProgressHUD+CommonShow.h */,
 				5A9C25E11B67C7A400779546 /* MBProgressHUD+CommonShow.m */,
+				5AEFD8251B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.h */,
+				5AEFD8261B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.m */,
+				5AEFD8271B7124B800D791B3 /* XGHttpManager.h */,
+				5AEFD8281B7124B800D791B3 /* XGHttpManager.m */,
 				5A9C25E21B67C7A400779546 /* UIView+Additions.h */,
 				5A9C25E31B67C7A400779546 /* UIView+Additions.m */,
 				5A9C25E41B67C7A400779546 /* XGAppCommon.swift */,
@@ -274,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				5AA7DBB81B6BD757006DB05F /* Main.storyboard */,
+				5AEFD8201B710FB400D791B3 /* ZYOpenAddressGuideViewController.swift */,
 				5A7E9ADA1B709C4200550F11 /* ZYSelecteFriendsViewController.swift */,
 				5A7E9AC91B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift */,
 				5A06E8FC1B6E067F00A55B67 /* ZYSpeechInputViewController.swift */,
@@ -312,6 +345,11 @@
 		8E318E605CB44B0094D4A5A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AEFD8101B70B90A00D791B3 /* CoreText.framework */,
+				5AEFD80E1B70B90100D791B3 /* CoreGraphics.framework */,
+				5AEFD80C1B70B8F400D791B3 /* GLKit.framework */,
+				5AEFD80A1B70B8EA00D791B3 /* QuartzCore.framework */,
+				5AEFD8081B70B8DE00D791B3 /* OpenGLES.framework */,
 				5A66904D1B6F9D1800B8A6E2 /* libsqlite3.0.dylib */,
 				5A66904B1B6F9D0700B8A6E2 /* libz.dylib */,
 				5A6690491B6F9CEC00B8A6E2 /* SystemConfiguration.framework */,
@@ -365,6 +403,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5A9C25A91B671B9400779546;
 			productRefGroup = 5A9C25B31B671B9400779546 /* Products */;
@@ -431,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AEFD8291B7124B800D791B3 /* AFHTTPRequestOperationManager+UploadProgress.m in Sources */,
 				5A8D20621B6DD9F9004E07D4 /* ZYFriendProfileDateCell.swift in Sources */,
 				5ACBE8441B6935A200886C49 /* ZYInputtingPhoneNumViewController.swift in Sources */,
 				5A9C25FA1B67C89600779546 /* ZYCustomTextField.swift in Sources */,
@@ -439,9 +479,11 @@
 				5A9C25F11B67C7A400779546 /* UIView+Additions.m in Sources */,
 				5A6690501B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift in Sources */,
 				5A9C25F81B67C7A400779546 /* XGUtility.m in Sources */,
+				5AEFD8241B71230600D791B3 /* UIImage+Addtional.m in Sources */,
 				5AA7DBC41B6BD757006DB05F /* ZYMainViewController.swift in Sources */,
 				5ACBE8451B6935A200886C49 /* ZYLoginViewController.swift in Sources */,
 				5A8D205E1B6D93E3004E07D4 /* ZYNewFriendViewController.swift in Sources */,
+				5AEFD8211B710FB400D791B3 /* ZYOpenAddressGuideViewController.swift in Sources */,
 				5AA7DBC71B6BD757006DB05F /* ZYScheduleViewController.swift in Sources */,
 				5A9C25F01B67C7A400779546 /* MBProgressHUD+CommonShow.m in Sources */,
 				5A9C25F51B67C7A400779546 /* XGGlobalURL.m in Sources */,
@@ -468,6 +510,7 @@
 				5AA7DBC21B6BD757006DB05F /* ZYCalendarCell.swift in Sources */,
 				5A9C25F31B67C7A400779546 /* XGCommonExtension.swift in Sources */,
 				5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */,
+				5AEFD82A1B7124B800D791B3 /* XGHttpManager.m in Sources */,
 				5AA7DBA61B6BC90F006DB05F /* ZYMScheduleItem.swift in Sources */,
 				5AA7DBC91B6BE22A006DB05F /* ZYNewScheduleViewController.swift in Sources */,
 				5A66903A1B6F95A000B8A6E2 /* GZThirdPartyWeChatManager.m in Sources */,
@@ -597,6 +640,8 @@
 					"${PODS_ROOT}/**",
 					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/thirdParty/WeChatSDK_1.5",
 					"$(inherited)",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/Baidu_Voice_Combine_SDK_iOS/BDVRClientSample/libBDVoiceRecognitionClient",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/Baidu_Voice_Combine_SDK_iOS/libBDVoiceRecognitionClient",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Biu-Bridging-Header.h";
@@ -618,6 +663,8 @@
 					"${PODS_ROOT}/**",
 					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/thirdParty/WeChatSDK_1.5",
 					"$(inherited)",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/Baidu_Voice_Combine_SDK_iOS/BDVRClientSample/libBDVoiceRecognitionClient",
+					"$(PROJECT_DIR)/ZhanYeZhuShou/Util/Baidu_Voice_Combine_SDK_iOS/libBDVoiceRecognitionClient",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)/Biu-Bridging-Header.h";

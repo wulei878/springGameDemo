@@ -47,6 +47,7 @@ class ZYPersonalViewController: UITableViewController {
         let object = GZThirdPartyObject()
         object.shareDestionation = .WeixinLogout
         GZThirdPartyManager.sharedInstance().logoutWithShareObject(object)
+        NSFileManager.defaultManager().removeItemAtPath(XGFileInfo.filePathAppendingUserIDWithString("UserInfo"), error: nil)
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.changeRootViewController(ZYPreLoginViewController.getInstance())
     }

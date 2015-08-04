@@ -15,3 +15,5 @@
 #import <FSCalendar/FSCalendar.h>
 #import <FSCalendar/NSDate+FSExtension.h>
 #import "ZYAddressBookHelper.h"
+#import "XGFileInfo.h"
+#import "UIImage+Addtional.h"

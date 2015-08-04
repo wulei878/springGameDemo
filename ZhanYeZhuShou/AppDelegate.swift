@@ -24,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         let thirdPartyManager = GZThirdPartyManager.sharedInstance()
         thirdPartyManager.uploadAppKey()
+        let userInfo: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithFile(XGFileInfo.filePathAppendingUserIDWithString("UserInfo"))
+        if let userInfo: AnyObject = userInfo {
+            let info = userInfo as! ZYMUserItem
+            ZYUserManager.sharedManager.userItem = info
+        }
         window?.rootViewController = ZYMainViewController.getInstance()
         return true
     }
