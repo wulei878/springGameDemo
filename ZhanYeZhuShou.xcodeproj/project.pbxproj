@@ -20,6 +20,9 @@
 		5A6690501B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A66904F1B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift */; };
 		5A6690521B6FB84200B8A6E2 /* ZYMUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690511B6FB84200B8A6E2 /* ZYMUserItem.swift */; };
 		5A6690541B6FBA6500B8A6E2 /* ZYUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */; };
+		5A7E9ACA1B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E9AC91B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift */; };
+		5A7E9ACD1B70898900550F11 /* ZYAddressBookHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E9ACC1B70898900550F11 /* ZYAddressBookHelper.m */; };
+		5A7E9ADB1B709C4200550F11 /* ZYSelecteFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7E9ADA1B709C4200550F11 /* ZYSelecteFriendsViewController.swift */; };
 		5A8D205A1B6CBE12004E07D4 /* ZYAddressBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */; };
 		5A8D205C1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */; };
 		5A8D205E1B6D93E3004E07D4 /* ZYNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8D205D1B6D93E3004E07D4 /* ZYNewFriendViewController.swift */; };
@@ -78,6 +81,10 @@
 		5A66904F1B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYPreLoginViewController.swift; sourceTree = "<group>"; };
 		5A6690511B6FB84200B8A6E2 /* ZYMUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZYMUserItem.swift; path = ZhanYeZhuShou/Model/ZYMUserItem.swift; sourceTree = SOURCE_ROOT; };
 		5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYUserManager.swift; sourceTree = "<group>"; };
+		5A7E9AC91B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYAddAddressBookFriendViewController.swift; sourceTree = "<group>"; };
+		5A7E9ACB1B70898900550F11 /* ZYAddressBookHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddressBookHelper.h; sourceTree = "<group>"; };
+		5A7E9ACC1B70898900550F11 /* ZYAddressBookHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddressBookHelper.m; sourceTree = "<group>"; };
+		5A7E9ADA1B709C4200550F11 /* ZYSelecteFriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYSelecteFriendsViewController.swift; sourceTree = "<group>"; };
 		5A7FB2501B67D7D00085184C /* Biu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Biu-Bridging-Header.h"; sourceTree = "<group>"; };
 		5A8D20591B6CBE12004E07D4 /* ZYAddressBookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYAddressBookCell.swift; sourceTree = "<group>"; };
 		5A8D205B1B6CCDDD004E07D4 /* ZYChooseWayToAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYChooseWayToAddViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +236,8 @@
 			children = (
 				5A6690311B6F95A000B8A6E2 /* thirdParty */,
 				5A9C25F91B67C89600779546 /* ZYCustomTextField.swift */,
+				5A7E9ACB1B70898900550F11 /* ZYAddressBookHelper.h */,
+				5A7E9ACC1B70898900550F11 /* ZYAddressBookHelper.m */,
 				5A6690531B6FBA6500B8A6E2 /* ZYUserManager.swift */,
 				5A9C25E01B67C7A400779546 /* MBProgressHUD+CommonShow.h */,
 				5A9C25E11B67C7A400779546 /* MBProgressHUD+CommonShow.m */,
@@ -265,6 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				5AA7DBB81B6BD757006DB05F /* Main.storyboard */,
+				5A7E9ADA1B709C4200550F11 /* ZYSelecteFriendsViewController.swift */,
+				5A7E9AC91B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift */,
 				5A06E8FC1B6E067F00A55B67 /* ZYSpeechInputViewController.swift */,
 				5A8D205F1B6DD999004E07D4 /* ZYFriendProfileViewController.swift */,
 				5A8D20611B6DD9F9004E07D4 /* ZYFriendProfileDateCell.swift */,
@@ -343,6 +354,7 @@
 				TargetAttributes = {
 					5A9C25B11B671B9400779546 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 98X983F7YY;
 					};
 				};
 			};
@@ -422,6 +434,7 @@
 				5A8D20621B6DD9F9004E07D4 /* ZYFriendProfileDateCell.swift in Sources */,
 				5ACBE8441B6935A200886C49 /* ZYInputtingPhoneNumViewController.swift in Sources */,
 				5A9C25FA1B67C89600779546 /* ZYCustomTextField.swift in Sources */,
+				5A7E9ACA1B7088B500550F11 /* ZYAddAddressBookFriendViewController.swift in Sources */,
 				5A8D20641B6DDA11004E07D4 /* ZYFriendProfileLogCell.swift in Sources */,
 				5A9C25F11B67C7A400779546 /* UIView+Additions.m in Sources */,
 				5A6690501B6FAFD300B8A6E2 /* ZYPreLoginViewController.swift in Sources */,
@@ -435,12 +448,14 @@
 				5A9C25F41B67C7A400779546 /* XGFileInfo.m in Sources */,
 				5A6690391B6F95A000B8A6E2 /* GZThirdPartyObject.m in Sources */,
 				5AA7DBC51B6BD757006DB05F /* ZYPersonalViewController.swift in Sources */,
+				5A7E9ADB1B709C4200550F11 /* ZYSelecteFriendsViewController.swift in Sources */,
 				5A9C25F61B67C7A400779546 /* XGGlobalVariables.m in Sources */,
 				5A8D20601B6DD999004E07D4 /* ZYFriendProfileViewController.swift in Sources */,
 				5A6690521B6FB84200B8A6E2 /* ZYMUserItem.swift in Sources */,
 				5AA7DBA21B6BA95B006DB05F /* ZYMCalendarItem.swift in Sources */,
 				5A6690541B6FBA6500B8A6E2 /* ZYUserManager.swift in Sources */,
 				5A9C25F21B67C7A400779546 /* XGAppCommon.swift in Sources */,
+				5A7E9ACD1B70898900550F11 /* ZYAddressBookHelper.m in Sources */,
 				5AA7DBC61B6BD757006DB05F /* ZYScheduleCell.swift in Sources */,
 				5ACBE8471B6935A200886C49 /* ZYVerificationCodeViewController.swift in Sources */,
 				5A06E8FD1B6E067F00A55B67 /* ZYSpeechInputViewController.swift in Sources */,
@@ -573,6 +588,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SWIFT_MODULE_NAME)/Biu-PrefixHeader.pch";
 				INFOPLIST_FILE = ZhanYeZhuShou/Info.plist;
@@ -593,6 +609,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SWIFT_MODULE_NAME)/Biu-PrefixHeader.pch";
 				INFOPLIST_FILE = ZhanYeZhuShou/Info.plist;

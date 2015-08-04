@@ -48,8 +48,6 @@
 @property (strong, nonatomic) NSCalendar                 *calendar;
 @property (assign, nonatomic) BOOL                       supressEvent;
 
-@property (assign, nonatomic) BOOL                       needsAdjustingMonthPosition;
-
 - (void)orientationDidChange:(NSNotification *)notification;
 
 - (NSDate *)dateForIndexPath:(NSIndexPath *)indexPath;
@@ -99,8 +97,9 @@
     
     _headerHeight     = -1;
     _calendar         = [NSCalendar currentCalendar];
+    self.sectionCount = 1;
     
-    NSArray *weekSymbols = [_calendar shortStandaloneWeekdaySymbols];
+    NSArray *weekSymbols = [_calendar veryShortStandaloneWeekdaySymbols];
     _weekdays = [NSMutableArray arrayWithCapacity:weekSymbols.count];
     for (int i = 0; i < weekSymbols.count; i++) {
         UILabel *weekdayLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -176,7 +175,7 @@
     _collectionView.contentInset = UIEdgeInsetsZero;
     _collectionViewFlowLayout.itemSize = CGSizeMake(
                                                     _collectionView.fs_width/7-(_flow == FSCalendarFlowVertical)*0.1,
-                                                    (_collectionView.fs_height-padding*2)/6
+                                                    (_collectionView.fs_height-padding*2)/self.sectionCount
                                                     );
     _collectionViewFlowLayout.sectionInset = UIEdgeInsetsMake(padding, 0, padding, 0);
     
@@ -225,13 +224,13 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    NSInteger sections = [_maximumDate fs_monthsFrom:_minimumDate.fs_firstDayOfMonth] + 1;
+    NSInteger sections = ([_maximumDate fs_monthsFrom:_minimumDate.fs_firstDayOfMonth] + 1);
     return sections;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 42;
+    return 7 * self.sectionCount;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -536,8 +535,8 @@
     NSDate *firstDateOfPage = [firstDayOfMonth fs_dateBySubtractingDays:numberOfPlaceholdersForPrev];
     NSDate *date;
     if (self.flow == FSCalendarFlowHorizontal) {
-        NSUInteger    rows = indexPath.item % 6;
-        NSUInteger columns = indexPath.item / 6;
+        NSUInteger    rows = indexPath.item % self.sectionCount;
+        NSUInteger columns = indexPath.item / self.sectionCount;
         date = [firstDateOfPage fs_dateByAddingDays:7 * rows + columns];
     } else {
         date = [firstDateOfPage fs_dateByAddingDays:indexPath.item];
@@ -549,14 +548,22 @@
 {
     NSInteger section = [date fs_monthsFrom:_minimumDate.fs_firstDayOfMonth];
     NSDate *firstDayOfMonth = date.fs_firstDayOfMonth;
-    NSInteger numberOfPlaceholdersForPrev = ((firstDayOfMonth.fs_weekday - _firstWeekday) + 7) % 7 ? : 7;
-    NSDate *firstDateOfPage = [firstDayOfMonth fs_dateBySubtractingDays:numberOfPlaceholdersForPrev];
+    NSInteger numberOfPlaceholdersForPrev = 0;
+    NSDate *firstDateOfPage = nil;
+    if (self.sectionCount == 1) {
+//        numberOfPlaceholdersForPrev = firstDayOfMonth.fs_weekday - date.fs_weekday;
+        firstDateOfPage = [date fs_dateBySubtractingDays:date.fs_weekday];
+    } else {
+        numberOfPlaceholdersForPrev = ((firstDayOfMonth.fs_weekday - _firstWeekday) + 7) % 7 ? : 7;
+        firstDateOfPage = [firstDayOfMonth fs_dateBySubtractingDays:numberOfPlaceholdersForPrev];
+    }
+
     NSInteger item = 0;
     if (self.flow == FSCalendarFlowHorizontal) {
         NSInteger vItem = [date fs_daysFrom:firstDateOfPage];
         NSInteger rows = vItem/7;
         NSInteger columns = vItem%7;
-        item = columns*6 + rows;
+        item = columns*self.sectionCount + rows;
     } else if (self.flow == FSCalendarFlowVertical) {
         item = [date fs_daysFrom:firstDateOfPage];
     }

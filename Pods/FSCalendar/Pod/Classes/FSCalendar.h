@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, FSCalendarCellState) {
 
 @property (weak, nonatomic) IBOutlet id<FSCalendarDelegate>   delegate;
 @property (weak, nonatomic) IBOutlet id<FSCalendarDataSource> dataSource;
-
+@property (assign, nonatomic) NSUInteger sectionCount;
 @property (strong, nonatomic) NSDate *currentDate;
 @property (strong, nonatomic) NSDate *selectedDate;
 @property (strong, nonatomic) NSDate *currentMonth;
@@ -67,6 +67,8 @@ typedef NS_ENUM(NSInteger, FSCalendarCellState) {
 @property (readonly, nonatomic) FSCalendarAppearance *appearance;
 @property (readonly, nonatomic) NSDate *minimumDate;
 @property (readonly, nonatomic) NSDate *maximumDate;
+@property (assign, nonatomic) CGFloat weekHeight;
+@property (assign, nonatomic) BOOL                       needsAdjustingMonthPosition;
 
 - (void)reloadData;
 

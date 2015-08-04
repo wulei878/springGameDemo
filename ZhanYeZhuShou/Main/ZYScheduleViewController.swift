@@ -8,30 +8,28 @@
 
 import UIKit
 
-class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate {
+class ZYScheduleViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource, FSCalendarDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var degreeLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var topView: UIView!
     var calendarData = [ZYMCalendarItem]()
     let calendarDay = ["日","一","二","三","四","五","六",]
-    @IBOutlet weak var calendarDayContainer: UIView!
     let cellWidth = screen_width / 7
     var scheduleData = [ZYMScheduleItem]()
+    @IBOutlet weak var calendar: FSCalendar!
+    @IBOutlet weak var calendarBottom: NSLayoutConstraint!
+    
     
     class func getInstance() -> ZYScheduleViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYScheduleViewController") as! ZYScheduleViewController
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.registerNib(UINib(nibName: "ZYElementViews", bundle: nil), forCellWithReuseIdentifier: "ZYCalendarCell")
         customUI()
-        let array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-        for (index, dayNum) in enumerate(array) {
-            var item = ZYMCalendarItem(day: index % 7, dayNum: dayNum)
-            calendarData.append(item)
-        }
         for index in 0...3 {
             let item = ZYMScheduleItem()
             item.timeInterval = "11:00\n/\n12:00"
@@ -61,35 +59,49 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     }
     
     func customUI() {
-        calendarDayContainer.layoutIfNeeded()
-        for (index, day) in enumerate(calendarDay) {
-            var label = UILabel(frame: CGRectMake(CGFloat(index) * cellWidth, 0, cellWidth, calendarDayContainer.height))
-            label.font = UIFont(name: "STHeitiSC-Light", size: 11)
-            label.textColor = UIColor.hexColorWithAlpha(0xffffff, alpha: 1)
-            label.textAlignment = NSTextAlignment.Center
-            label.text = day
-            if day == "日" || day == "六" {
-                label.alpha = 0.5
-            }
-            calendarDayContainer.addSubview(label)
-        }
+        let swipe1 = UISwipeGestureRecognizer(target: self, action: "swipeAction:")
+        swipe1.direction = .Down
+        let swipe2 = UISwipeGestureRecognizer(target: self, action: "swipeAction:")
+        swipe2.direction = .Up
+        topView.addGestureRecognizer(swipe1)
+        topView.addGestureRecognizer(swipe2)
+        calendar.layoutIfNeeded()
+        calendar.delegate = self
+        calendar.selectedDate = NSDate()
+        calendar.dataSource = self
+        calendar.appearance.weekdayFont = UIFont(name: "STHeitiSC-Light", size: 11)
+        calendar.appearance.weekdayTextColor = UIColor.whiteColor()
+        calendar.appearance.titleFont = UIFont(name: "Helvetica-Bold", size: 15)
+        calendar.appearance.titleDefaultColor = UIColor.whiteColor()
+        calendar.appearance.titleSelectionColor = UIColor.hexColor(0x33b7ff)
+        calendar.appearance.selectionColor = UIColor.whiteColor()
+        calendar.appearance.titlePlaceholderColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)
+        calendar.appearance.eventColor = UIColor.whiteColor()
+        calendar.appearance.autoAdjustTitleSize = false
+        calendar.needsAdjustingMonthPosition = true
     }
 
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return calendarData.count
+    func swipeAction(gesture:UISwipeGestureRecognizer) {
+        if gesture.direction == .Down && topViewHeight.constant < 400 {
+            self.calendar.sectionCount = 5
+            topViewHeight.constant = 400
+            calendarBottom.constant = 64
+            view.setNeedsUpdateConstraints()
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+        } else if gesture.direction == .Up && topViewHeight.constant == 400 {
+            self.calendar.sectionCount = 1
+            topViewHeight.constant = 160
+            calendarBottom.constant = 20
+            view.setNeedsUpdateConstraints()
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.view.layoutIfNeeded()
+            })
+        }
+        calendar.reloadData()
     }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("ZYCalendarCell", forIndexPath: indexPath) as! ZYCalendarCell
-        cell.configData(calendarData[indexPath.row])
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake(cellWidth, 66)
-    }
-    
+        
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let item = scheduleData[indexPath.row]
         if item.selected {
@@ -122,5 +134,22 @@ class ZYScheduleViewController: UIViewController,UICollectionViewDataSource,UICo
     
     @IBAction func addNewAction(sender: AnyObject) {
         navigationController?.pushViewController(ZYSpeechInputViewController.getInstance(), animated: true)
+    }
+    
+    func calendarCurrentMonthDidChange(calendar: FSCalendar!) {
+        dateLabel.text = calendar.currentMonth.fs_stringWithFormat("yyyy.MM")
+    }
+    
+    func calendar(calendar: FSCalendar!, hasEventForDate date: NSDate!) -> Bool {
+        return true
+    }
+    
+    func calendar(calendar: FSCalendar!, shouldSelectDate date: NSDate!) -> Bool {
+
+        return true
+    }
+    
+    func calendar(calendar: FSCalendar!, didSelectDate date: NSDate!) {
+
     }
 }

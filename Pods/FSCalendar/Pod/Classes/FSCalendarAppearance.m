@@ -349,8 +349,8 @@
 - (void)adjustTitleIfNecessary
 {
     if (_autoAdjustTitleSize) {
-        _titleFont       = [_titleFont fontWithSize:_calendar.collectionView.fs_height/3/6];
-        _subtitleFont    = [_subtitleFont fontWithSize:_calendar.collectionView.fs_height/4.5/6];
+        _titleFont       = [_titleFont fontWithSize:_calendar.collectionView.fs_height/3/self.calendar.sectionCount];
+        _subtitleFont    = [_subtitleFont fontWithSize:_calendar.collectionView.fs_height/4.5/self.calendar.sectionCount];
         _headerTitleFont = [_headerTitleFont fontWithSize:_titleFont.pointSize+3];
         _weekdayFont     = _titleFont;
         

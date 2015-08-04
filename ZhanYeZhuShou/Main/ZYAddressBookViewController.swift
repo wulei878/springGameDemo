@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import MessageUI
 
-class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMessageComposeViewControllerDelegate,ZYAddressBookCellProtocol {
     @IBOutlet weak var titleMessageButton: UIButton!
     @IBOutlet weak var newFriendButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addTypeView: UIView!
+    @IBOutlet weak var addByScanButton: UIView!
+    @IBOutlet weak var addByAddressBookButton: UIView!
+    @IBOutlet weak var addByInputButton: UIView!
+    var buttons:[UIView]!
+    
+    @IBOutlet var separatorHeight: [NSLayoutConstraint]!
 
     class func getInstance() -> ZYAddressBookViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYAddressBookViewController") as! ZYAddressBookViewController
@@ -19,6 +27,15 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTypeView.hidden = true
+        buttons = [addByScanButton,addByAddressBookButton,addByInputButton]
+        for view in buttons {
+            let tap = UITapGestureRecognizer(target: self, action: "tapAction:")
+            view.addGestureRecognizer(tap)
+        }
+        for height in separatorHeight {
+            height.constant /= UIScreen.mainScreen().scale
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -55,10 +72,50 @@ class ZYAddressBookViewController: UIViewController,UITableViewDelegate,UITableV
     }
 
     @IBAction func messageAction(sender: AnyObject) {
+        if MFMessageComposeViewController.canSendText() {
+            var vc = MFMessageComposeViewController()
+            vc.messageComposeDelegate = self
+            vc.body = "这是一封短信"
+        }
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        var string = "发送失败"
+        switch result.value {
+        case MessageComposeResultCancelled.value:
+            string = "发送已被取消"
+        case MessageComposeResultSent.value:
+            string = "发送成功"
+        case MessageComposeResultFailed.value:
+            string = "发送失败"
+        default:
+            break;
+        }
+        MBProgressHUD.showTimedDetailsTextHUDOnView(view.window, message: "发送成功", animated: true)
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func tapAction(tapGesutre:UITapGestureRecognizer) {
+        if tapGesutre.view == addByAddressBookButton {
+            navigationController?.pushViewController(ZYAddAddressBookFriendViewController.getInstance(), animated: true)
+        } else if tapGesutre.view == addByInputButton {
+            navigationController?.pushViewController(ZYNewFriendViewController.getInstance(), animated: true)
+        } else {
+            
+        }
     }
     
     @IBAction func newFriendAction(sender: AnyObject) {
-        navigationController?.pushViewController(ZYChooseWayToAddViewController.getInstance(), animated: true)
+        addTypeView.hidden = !addTypeView.hidden
+    }
+    
+    func addressBookCellMakePhoneCall(cell: ZYAddressBookCell) {
+        let index = tableView.indexPathForCell(cell)?.row
+        
+    }
+    
+    func addressBookCellSendMessage(cell: ZYAddressBookCell) {
+        let index = tableView.indexPathForCell(cell)?.row
     }
     
 }

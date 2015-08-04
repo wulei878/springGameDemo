@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol ZYAddressBookCellProtocol:NSObjectProtocol {
+    func addressBookCellMakePhoneCall(cell:ZYAddressBookCell)
+    func addressBookCellSendMessage(cell:ZYAddressBookCell)
+}
+
 class ZYAddressBookCell: UITableViewCell {
 
     @IBOutlet weak var separatorHeight: NSLayoutConstraint!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
-    
+    weak var addressBookCellProtocol:ZYAddressBookCellProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +30,10 @@ class ZYAddressBookCell: UITableViewCell {
     }
 
     @IBAction func phoneCallAction(sender: AnyObject) {
+        addressBookCellProtocol?.addressBookCellMakePhoneCall(self)
     }
     
     @IBAction func messageAction(sender: AnyObject) {
+        addressBookCellProtocol?.addressBookCellSendMessage(self)
     }
 }

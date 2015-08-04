@@ -10,6 +10,7 @@ import UIKit
 
 class ZYNewFriendViewController: UITableViewController {
 
+    var newFriend:ZYMContactor!
     @IBOutlet var separatorHeightArray: [NSLayoutConstraint]!
     
     @IBOutlet weak var nameTextField: ZYCustomTextField!
@@ -31,6 +32,7 @@ class ZYNewFriendViewController: UITableViewController {
         companyNameTextField.attributedPlaceholder = attributeString
         attributeString.replaceCharactersInRange(NSMakeRange(0, attributeString.length), withString: "点击填写")
         jobTextField.attributedPlaceholder = attributeString
+        nameTextField.text = newFriend.firstName
     }
     @IBAction func doneAction(sender: AnyObject) {
         navigationController?.popToRootViewControllerAnimated(true)
