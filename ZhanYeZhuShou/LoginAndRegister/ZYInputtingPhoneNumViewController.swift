@@ -24,6 +24,7 @@ class ZYInputtingPhoneNumViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func goNext(sender: AnyObject) {
+        ZYLoginManager.sharedManager.loginPhoneNum = phoneNumTextFiled.text
         navigationController?.pushViewController(ZYVerificationCodeViewController.getInstance(), animated: true)
     }
     

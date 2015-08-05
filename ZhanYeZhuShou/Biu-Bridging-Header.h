@@ -17,3 +17,4 @@
 #import "ZYAddressBookHelper.h"
 #import "XGFileInfo.h"
 #import "UIImage+Addtional.h"
+#import "XGHttpManager.h"

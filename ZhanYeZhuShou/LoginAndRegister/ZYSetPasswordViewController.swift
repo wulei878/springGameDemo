@@ -66,6 +66,20 @@ class ZYSetPasswordViewController: UIViewController,UITextFieldDelegate {
     }
     
     @IBAction func doneAction(sender: AnyObject) {
+        var message = ""
+        if passwordTextField.text == "" {
+            MBProgressHUD.showTimedDetailsTextHUDOnView(view, message: "密码不能为空", animated: true)
+        }
+        if passwordTextField.text != confirmTextField.text {
+            MBProgressHUD.showTimedDetailsTextHUDOnView(view, message: "输入的密码不一致", animated: true)
+        }
+
+        let dic = ["username":ZYLoginManager.sharedManager.loginPhoneNum,"password":passwordTextField.text]
+//        XGHttpManager.sharedManager().postRequestForPath("user/register", parameters: dic, successBlock: { (data) -> Void in
+//            
+//        }) { (error) -> Void in
+//            
+//        }
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.changeRootViewController(ZYMainViewController.getInstance())
     }

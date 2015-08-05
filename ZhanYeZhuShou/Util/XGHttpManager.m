@@ -91,12 +91,12 @@ typedef NS_ENUM(NSInteger, EHttpRequestTypes) {
     switch (type) {
         case EHttpRequestTypeGET:
         {
-            [self.httpManager GET:urlPath parameters:parameters success:successBlock failure:failureBlock];
+            [self.httpManager GET:urlPath parameters:parametersWithUserIdAndTicketIfHave success:successBlock failure:failureBlock];
         }
             break;
         case EHttpRequestTypePOST:
         {
-            [self.httpManager POST:urlPath parameters:parameters success:successBlock failure:failureBlock];
+            [self.httpManager POST:urlPath parameters:parametersWithUserIdAndTicketIfHave success:successBlock failure:failureBlock];
         }
         default:
             break;
@@ -136,7 +136,7 @@ typedef NS_ENUM(NSInteger, EHttpRequestTypes) {
         PTInvokeBlock(progress,percent);
     };
     
-    [self.httpManager POST:urlPath parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    [self.httpManager POST:urlPath parameters:parametersWithUserIdAndTicketIfHave constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         NSString *filename = @"data.jpg";
         NSString *mimeType = @"image/jpeg";
         [formData appendPartWithFileData:imageData
