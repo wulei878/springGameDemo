@@ -16,4 +16,23 @@ class ZYUserManager: NSObject {
     }
     
     var userItem:ZYMUserItem?
+    
+    func find(array:[Int]!,rows:Int,columns:Int,num:Int)->Bool {
+        if array == nil || rows <= 0 || columns <= 0 {
+            return false
+        }
+        var row = 0
+        var column = columns - 1
+        while row < rows && columns >= 0 {
+            let number = array[row * columns + column]
+            if number == num {
+                return true
+            } else if number > num {
+                column--
+            } else {
+                row++
+            }
+        }
+        return false
+    }
 }

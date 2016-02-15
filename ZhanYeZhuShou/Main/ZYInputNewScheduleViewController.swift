@@ -16,8 +16,9 @@ class ZYInputNewScheduleViewController: UITableViewController {
     @IBOutlet weak var remindTextField: ZYCustomTextField!
     @IBOutlet weak var locationTextField: ZYCustomTextField!
     @IBOutlet weak var beginTimeTextField: ZYCustomTextField!
-    class func getInstance() -> ZYOpenAddressGuideViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYOpenAddressGuideViewController") as! ZYOpenAddressGuideViewController
+    
+    class func getInstance() -> ZYInputNewScheduleViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ZYInputNewScheduleViewController") as! ZYInputNewScheduleViewController
     }
     
     override func viewDidLoad() {
@@ -37,11 +38,27 @@ class ZYInputNewScheduleViewController: UITableViewController {
         datePicker.datePickerMode = .DateAndTime
         beginTimeTextField.inputView = datePicker
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor.hexColor(0x33b7ff)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func goBack(sender: AnyObject) {
+        navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func doneButton(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+
     
 
     /*

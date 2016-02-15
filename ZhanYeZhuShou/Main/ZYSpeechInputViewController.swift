@@ -24,6 +24,11 @@ class ZYSpeechInputViewController: UIViewController {
         let longPress = UILongPressGestureRecognizer(target: self, action: "longPressAction:")
         speechButton.addGestureRecognizer(longPress)
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,6 +36,9 @@ class ZYSpeechInputViewController: UIViewController {
     
     func longPressAction(gesture:UILongPressGestureRecognizer) {
         speechButton.selected = !(gesture.state == .Ended)
+        if gesture.state == .Ended {
+            navigationController?.pushViewController(ZYNewScheduleViewController.getInstance(), animated: true)
+        }
     }
 
     @IBAction func closeAction(sender: AnyObject) {
@@ -38,7 +46,7 @@ class ZYSpeechInputViewController: UIViewController {
     }
     
     @IBAction func keyboardInputAction(sender: AnyObject) {
-        navigationController?.pushViewController(ZYNewScheduleViewController.getInstance(), animated: true)
+        navigationController?.pushViewController(ZYInputNewScheduleViewController.getInstance(), animated: true)
     }
     
     
